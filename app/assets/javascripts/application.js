@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require popper
 //= require bootstrap-sprockets
+//= require select2.min
 //= require_tree .
