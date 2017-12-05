@@ -1,0 +1,29 @@
+.row-content
+  - if @character.name.present?
+    %h1.text-center.card-title= @character.name
+    .card-deck
+      .card
+        .card-body
+          %h4.text-center.card-title Information
+          %p
+            %b Gender:
+            = @character.gender
+            %br
+            %b Birth Year:
+            = @character.birth_year
+            %br
+            %b Home World:
+            = @character._homeworld
+      .card
+        .card-body
+          %h4.text-center.card-title Vehicles
+        %u.list-group.list-group-flush
+          - @character.vehicles_list.each do |vehicle|
+            %li.list-group-item= vehicle.name
+  - else
+    %h1.text-center.card-title Character not Found
+
+.row-content.text-center
+  %br
+  %br
+  = link_to "Back", root_path, class: 'btn btn-dark'
